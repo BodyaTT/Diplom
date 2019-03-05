@@ -17,7 +17,6 @@ export class WorkplaceComponent{
     return this.dataService.getRecept(this.searchRecept)
     .subscribe(data => {
       this.recepts = data
-      console.log(this.searchRecept)
     });
   }
 }

@@ -1,26 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
+import { RouterModule ,Route } from '@angular/router';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
-import { DataService } from './data.service';
-import { WorkplaceComponent } from './modules/my-cook-app/workplace/workplace.component';
-import { FormsModule } from '@angular/forms';
+import {MyCookAppModule } from './modules/my-cook-app/my-cook-app.module'
 
+const ROUTES: Route[] = [
+  {
+    path: '',
+    loadChildren: './modules/my-cook-app/my-cook-app.module#MyCookAppModule'
+  }
+];
 
 @NgModule({
   declarations: [
-    AppComponent,
-    WorkplaceComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
+    MyCookAppModule,
+    RouterModule.forRoot(ROUTES)
+    
   ],
-  providers: [DataService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
