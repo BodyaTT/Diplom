@@ -1,0 +1,6 @@
+
+Search recept: <input type="text" [(ngModel)] = "searchRecept">
+<button (click)="search()">Search</button>
+<div *ngFor = "let recept of recepts?.hits " style="text-align:center">
+  <h2>{{recept.recipe.label}}</h2>
+  </div>

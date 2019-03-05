@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Recept } from './modules/my-cook-app/models/recept.model';
-import { DataService } from './data.service';
+import { Component} from '@angular/core';
 
 
 @Component({
@@ -8,14 +6,9 @@ import { DataService } from './data.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  recepts: Recept[];
-  constructor(private dataService: DataService){}
-
-  ngOnInit(){
-    return this.dataService.getRecept()
-    .subscribe(data => this.recepts = data);
-  }
+export class AppComponent{
+  
+  constructor(){}
 
   title = 'my-cook-app';
 

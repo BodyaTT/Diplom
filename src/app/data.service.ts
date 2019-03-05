@@ -6,11 +6,11 @@ import { Recept } from './modules/my-cook-app/models/recept.model';
   providedIn: 'root'
 })
 export class DataService {
-  apiUrl = "https://api.edamam.com/search?q=potato&app_id=5a79b16d&app_key=106522329383adb2c93f889d76e7a990";
+  apiUrl:string = "https://api.edamam.com/search?q=";
 
   constructor(private _http:HttpClient) { }
 
-  getRecept(){
-    return this._http.get<Recept[]>(this.apiUrl);
+  getRecept(searchRecept:string){
+    return this._http.get<Recept[]>(this.apiUrl + searchRecept + "&app_id=5a79b16d&app_key=106522329383adb2c93f889d76e7a990");
   }
 }
