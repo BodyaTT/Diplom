@@ -28,6 +28,6 @@ const ROUTES: Route[] = [
     OperationsInputComponent
   ],
   providers: [DataService],
-  exports: [WorkplaceComponent]
+  exports: [OperationsInputComponent]
 })
 export class MyCookAppModule { }

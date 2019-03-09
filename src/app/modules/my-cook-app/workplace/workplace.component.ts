@@ -1,6 +1,6 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { DataService } from '../../../data.service';
-import { Recept } from '../models/recept.model';
+
 
 @Component({
   selector: 'app-workplace',
@@ -9,14 +9,15 @@ import { Recept } from '../models/recept.model';
 })
 
 export class WorkplaceComponent{
-  searchRecept: string;
-  recepts: Recept[];
+  recepts: any;
   constructor(private dataService: DataService){}
-  
-  search(){
-    return this.dataService.getRecept(this.searchRecept)
+
+
+  search(searchRecept:string){ 
+    return this.dataService.getRecept(searchRecept)
     .subscribe(data => {
-      this.recepts = data
+      this.recepts = data.hits
+      console.log(this.recepts)
     });
   }
 }

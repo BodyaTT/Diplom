@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-operations-input',
   templateUrl: './operations-input.component.html',
   styleUrls: ['./operations-input.component.css']
 })
-export class OperationsInputComponent implements OnInit {
+export class OperationsInputComponent {
+  
+  searchRecept: string;
 
-  constructor() { }
-
-  ngOnInit() {
+  @Output() searchedRecipe = new EventEmitter;
+  
+  constructor(){}
+  
+  onSearched(){
+    this.searchedRecipe.emit(this.searchRecept);
   }
-
 }
+
+  
+
