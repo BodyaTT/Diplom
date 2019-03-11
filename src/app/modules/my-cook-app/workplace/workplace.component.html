@@ -1,11 +1,11 @@
 <app-operations-input  (searchedRecipe)="search($event)"></app-operations-input>
 <div *ngIf = "recepts">
-  <div *ngFor = "let recept of recepts">
-    <div class="result">
+  <div *ngFor = "let recept of recepts; let i = index">
+    <div class="result" [routerLink]="['details/', i, searchRecept]">
       <div class="recipe__image">
           <img src="{{recept.recipe.image}}" alt="recipe image">
       </div>
-      <div class="recipe__name">
+      <div class="recipe__inforamtion">
           <h2>{{recept.recipe.label}}</h2>
           <h2>Diet: {{recept.recipe.dietLabels[0]}}</h2>
           <h2>Ingradients: {{recept.recipe.ingredientLines.length}}</h2>

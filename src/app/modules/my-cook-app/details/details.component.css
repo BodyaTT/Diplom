@@ -1,0 +1,14 @@
+.result{
+    border: 1px solid #414141;
+    margin: 15px;
+}
+.recipe__image{
+    text-align: center;
+}
+.recipe__information{
+    margin-left: 15px;
+}
+.recipe__name h1{
+    text-align: center;
+    font-size: 40px;
+}
