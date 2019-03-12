@@ -1,0 +1,70 @@
+.search{
+    position: absolute;
+    left: 38%;
+    top: 40%;
+}
+.search mat-form-field{
+   width: 300px;
+   font-size: 20px;
+}
+.search mat-form-field input{
+    padding-left: 10px;
+}
+.search__postition button{
+    margin-left: 20px;
+}
+button{
+    position: relative;
+    left: 15px;
+    top: 10px;
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+
+    width: 32px;
+    height: 32px;
+    background-image: url(../../../../../images/recipe-book.png);
+}
+
+.search__up{
+    position: absolute;
+    left: 38%;
+    top: -1%;
+}
+
+.search__up mat-form-field{
+    width: 300px;
+    font-size: 20px;
+    border-bottom: none;
+ }
+ .search__up mat-form-field::ng-deep .mat-form-field-underline {
+    display: none;
+}
+ .search__up mat-form-field input{
+     padding-left: 10px;
+     height: 30px;
+     background-color: #ffffff;
+     border-radius: 50px;
+     border-bottom: none;
+ }
+ .search__postition__up button{
+     margin-left: 20px;
+ }
+ .button__up{
+     position: relative;
+     left: 15px;
+     top: 5px;
+     padding: 0;
+     border: none;
+     font: inherit;
+     color: inherit;
+     background-color: transparent;
+     cursor: pointer;
+ 
+     width: 32px;
+     height: 32px;
+     background-image: url(../../../../../images/recipe-book2.png);
+ }

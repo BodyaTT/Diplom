@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter} from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-operations-input',
@@ -8,6 +8,7 @@ import { Component, Output, EventEmitter} from '@angular/core';
 export class OperationsInputComponent {
   
   searchRecept: string;
+  isRecepts:boolean = false;
 
   @Output() searchedRecipe = new EventEmitter;
   
@@ -15,6 +16,7 @@ export class OperationsInputComponent {
   
   onSearched(){
     this.searchedRecipe.emit(this.searchRecept);
+    this.isRecepts = true;
   }
 }
 

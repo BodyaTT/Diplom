@@ -1,4 +1,4 @@
-<app-operations-input  (searchedRecipe)="search($event)"></app-operations-input>
+<app-operations-input (searchedRecipe)="search($event)"></app-operations-input>
 <div *ngIf = "recepts">
   <div *ngFor = "let recept of recepts; let i = index">
     <div class="result" [routerLink]="['details/', i, searchRecept]">

@@ -1,2 +1,6 @@
-Search recept: <input type="text" [(ngModel)] = "searchRecept">
-<button (click)="onSearched()">Search</button>
+<form  class="search" [ngClass]="{'search__up':this.isRecepts === true}">
+    <mat-form-field>
+            <input matInput placeholde="Search recept" [(ngModel)] = "searchRecept" name="something" autocomplete="off">
+    </mat-form-field>
+    <button (click)="onSearched()" [ngClass]="{'button__up' :this.isRecepts === true}"></button>
+</form>

@@ -3,6 +3,7 @@
     border: 1px solid #414141;
     margin: 15px;
     width: 50%;
+    cursor: pointer;
 }
 .recipe__inforamtion{
     margin-left: 15px;

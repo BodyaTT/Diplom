@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule ,Route } from '@angular/router';
 import { AppComponent } from './app.component';
-import {MyCookAppModule } from './modules/my-cook-app/my-cook-app.module'
+import {MyCookAppModule } from './modules/my-cook-app/my-cook-app.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 const ROUTES: Route[] = [
   {
@@ -18,7 +19,8 @@ const ROUTES: Route[] = [
   imports: [
     BrowserModule,
     MyCookAppModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    BrowserAnimationsModule
     
   ],
   providers: [],
