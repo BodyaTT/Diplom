@@ -1,6 +1,6 @@
 <form  class="search" [ngClass]="{'search__up':this.isRecepts === true}">
-    <mat-form-field>
-            <input matInput placeholde="Search recept" [(ngModel)] = "searchRecept" name="something" autocomplete="off">
+    <mat-form-field [floatLabel]="floatLabel">
+            <input matInput placeholder="Search recept" [(ngModel)] = "searchRecept" name="something" autocomplete="off">
     </mat-form-field>
     <button (click)="onSearched()" [ngClass]="{'button__up' :this.isRecepts === true}"></button>
 </form>

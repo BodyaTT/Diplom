@@ -12,3 +12,12 @@
     text-align: center;
     font-size: 40px;
 }
+.ingradient__information{
+    margin-left: 50px;
+}
+.recipe__name p{
+    font-size: 21px;
+}
+.ingradients{
+    font-size: 16px;
+}

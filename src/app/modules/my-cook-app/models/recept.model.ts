@@ -1,5 +1,6 @@
-export class Recept {
-    calories: number;
-    label: string;
-    source: string;
+export class Shopping {
+    constructor(public title: string, public completed: boolean = false){
+        this.title = title;
+        this.completed = completed;
+    }
 }

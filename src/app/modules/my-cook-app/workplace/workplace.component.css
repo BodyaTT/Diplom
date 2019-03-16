@@ -1,10 +1,11 @@
 .result{
     display: flex;
     border: 1px solid #414141;
-    margin: 15px;
     width: 50%;
     cursor: pointer;
+    margin: 10px auto 10px auto;
 }
 .recipe__inforamtion{
     margin-left: 15px;
+
 }

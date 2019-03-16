@@ -1,10 +1,10 @@
 .search{
     position: absolute;
-    left: 38%;
+    left: 32%;
     top: 40%;
 }
 .search mat-form-field{
-   width: 300px;
+   width: 500px;
    font-size: 20px;
 }
 .search mat-form-field input{
@@ -40,20 +40,20 @@ button{
     font-size: 20px;
     border-bottom: none;
  }
- .search__up mat-form-field::ng-deep .mat-form-field-underline {
+.search__up mat-form-field::ng-deep .mat-form-field-underline {
     display: none;
 }
- .search__up mat-form-field input{
+.search__up mat-form-field input{
      padding-left: 10px;
      height: 30px;
      background-color: #ffffff;
      border-radius: 50px;
      border-bottom: none;
  }
- .search__postition__up button{
+.search__postition__up button{
      margin-left: 20px;
  }
- .button__up{
+.button__up{
      position: relative;
      left: 15px;
      top: 5px;

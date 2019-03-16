@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { DataService } from '../../../data.service';
 
 
@@ -18,7 +18,6 @@ export class WorkplaceComponent{
     return this.dataService.getRecepts(searchRecept)
     .subscribe(data => {
       this.recepts = data.hits
-      console.log(this.recepts)
       this.searchRecept = searchRecept;
     });
     

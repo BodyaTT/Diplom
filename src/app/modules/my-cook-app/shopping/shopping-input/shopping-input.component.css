@@ -1,0 +1,9 @@
+.shopping-content .ingradients__input{
+    margin-top: 55px;
+    text-align: center;
+}
+.shopping-content .ingradients__input mat-form-field{
+    color: #75758A;
+    width: 500px;
+    font-size: 18px;
+ }

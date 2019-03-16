@@ -6,7 +6,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./operations-input.component.css']
 })
 export class OperationsInputComponent {
-  
+  floatLabel: string;
   searchRecept: string;
   isRecepts:boolean = false;
 
@@ -17,6 +17,8 @@ export class OperationsInputComponent {
   onSearched(){
     this.searchedRecipe.emit(this.searchRecept);
     this.isRecepts = true;
+    this.floatLabel = "never";
+
   }
 }
 

@@ -11,6 +11,8 @@ import { WrapComponent } from './wrap/wrap.component';
 import { DetailsComponent } from './details/details.component';
 import {SharedModule } from './shared/shared.module';
 import { ShoppingComponent } from './shopping/shopping.component';
+import { ShoppingInputComponent } from './shopping/shopping-input/shopping-input.component';
+import { ShoppingListComponent } from './shopping/shopping-list/shopping-list.component';
 
 const ROUTES: Route[] = [
   {
@@ -57,7 +59,9 @@ const ROUTES: Route[] = [
     OperationsInputComponent,
     WrapComponent,
     DetailsComponent,
-    ShoppingComponent
+    ShoppingComponent,
+    ShoppingInputComponent,
+    ShoppingListComponent
   ],
   providers: [DataService],
   exports: [OperationsInputComponent]

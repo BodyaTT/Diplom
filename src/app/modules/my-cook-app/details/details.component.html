@@ -8,10 +8,13 @@
         </div>
         <div class="recipe__name">
             <p>Calories - {{recepts.recipe.calories | number:'1.0-0'}}</p>
-            <p><b>Ingradients:</b></p>
-            <ul *ngFor = "let ingradient of recepts.recipe.ingredientLines">
-              <li>{{ingradient}}</li>
-            </ul>
-
+            <div class="ingradient__information">
+              <p><b>Ingradients:</b></p>
+              <div class="ingradients">
+                <ul *ngFor = "let ingradient of recepts.recipe.ingredientLines">
+                  <li>{{ingradient}}</li>
+                </ul>
+              </div>
+          </div>
         </div>
   </div>

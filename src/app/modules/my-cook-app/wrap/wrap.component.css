@@ -1,3 +1,6 @@
+.menu__link{
+    margin-left: 40px;
+}
 .menu__link a{
     position: relative;
     color: #ffffff;

@@ -1,0 +1,41 @@
+.shopping-content{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: #757575;
+    margin: 0 55px 55px 55px;
+}
+
+.shopping__list{
+    margin-bottom: 20px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    border-radius: 2px;
+    width: 100%;
+    background-color: white;
+    width: 600px;
+    margin: 0 auto;
+}
+.shopping__list .shopping__item{
+    padding: 1em;
+    display: flex;
+    align-items: center;
+}
+.shopping__item:not(:first-child) {
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+.completed{
+    text-decoration: line-through;
+    color: #E5E4E5;
+}
+.shopping__item .checkbox {
+    margin-right: .25em;
+}
+.shopping__item .actions {
+    margin-left: auto;
+    opacity: 0;
+    transition: all .2s;
+}
+.shopping__item:hover .actions {
+    opacity: 1;
+}
+.material-icons{
+    color: #673AB7;
+}
