@@ -3,7 +3,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule ,Route } from '@angular/router';
 import { AppComponent } from './app.component';
 import {MyCookAppModule } from './modules/my-cook-app/my-cook-app.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './../in-memory-data-service.service';
+
 
 const ROUTES: Route[] = [
   {
@@ -20,8 +24,9 @@ const ROUTES: Route[] = [
     BrowserModule,
     MyCookAppModule,
     RouterModule.forRoot(ROUTES),
-    BrowserAnimationsModule
-    
+    BrowserAnimationsModule,
+    HttpClientModule,
+    // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService) 
   ],
   providers: [],
   bootstrap: [AppComponent]

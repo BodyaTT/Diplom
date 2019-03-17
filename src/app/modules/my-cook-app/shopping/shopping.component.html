@@ -1,3 +1,19 @@
-<app-shopping-input></app-shopping-input>
-<app-shopping-list></app-shopping-list>
+<app-shopping-input (createdShopping)="create($event)"></app-shopping-input>
+<div class="shopping-content">
+  <div class="shopping__list" *ngIf="shopping.length">
+    <div class="shopping__item" *ngFor="let item of shopping"  [ngClass]="{'completed' : item.completed === 'true' }">
+      <button class="checkbox icon" (click)="toogle(item)">
+        <i class="material-icons">{{item.completed === 'true' ? 'check_box' : 'check_box_outline_blank'}}</i>
+      </button> 
+
+        <span class="title">{{item.title}}</span>
+
+        <div class="actions">
+          <button class="delete icon" (click)="delete(item)">
+              <i class="material-icons">delete</i>
+          </button>
+        </div>
+    </div>
+  </div>
+</div>
 

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { DataService } from '../../../../data.service';
+import { Shopping } from '../../models/recept.model'
 
 @Component({
   selector: 'app-shopping-input',
@@ -7,12 +8,21 @@ import { DataService } from '../../../../data.service';
   styleUrls: ['./shopping-input.component.css']
 })
 export class ShoppingInputComponent {
-  shoppingTitle: string;
   
+  shoppingTitle: string;
+  shopping: Shopping[] = [];
   constructor(private dataService: DataService) { }
 
+  @Output() createdShopping = new EventEmitter();
+
+  private _getShopping(){
+    this.dataService.getShopping()
+    .subscribe(res => {
+      this.shopping = res;
+      console.log(res);
+    });
+  }
   create(){
-    this.dataService.createShopping(this.shoppingTitle);
-    this.shoppingTitle = '';
+    this.createdShopping.emit(this.shoppingTitle);
   }
 }
