@@ -21,3 +21,6 @@
 .ingradients{
     font-size: 16px;
 }
+.ingradients ul span{
+    margin-left: 10px;
+}

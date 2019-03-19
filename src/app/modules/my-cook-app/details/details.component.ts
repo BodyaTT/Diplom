@@ -11,6 +11,7 @@ export class DetailsComponent implements OnInit{
   recipeId: string;
   searchRecept: string;
   recepts: any;
+  showAdd: boolean = false;
 
   constructor(
     private _cookService: DataService,
@@ -29,5 +30,13 @@ export class DetailsComponent implements OnInit{
     .subscribe(data => {
       this.recepts = data.hits[recipeId]
     });
+  }
+
+  add(){
+    this.showAdd = !this.showAdd;
+  }
+
+  addToShopping(index: number){ 
+    this._cookService.addToShopping(this.recepts.recipe.ingredientLines[index]).subscribe();
   }
 }

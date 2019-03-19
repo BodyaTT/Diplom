@@ -1,5 +1,4 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { DataService } from '../../../../data.service';
 import { Shopping } from '../../models/recept.model'
 
 @Component({
@@ -11,17 +10,10 @@ export class ShoppingInputComponent {
   
   shoppingTitle: string;
   shopping: Shopping[] = [];
-  constructor(private dataService: DataService) { }
+  constructor() { }
 
   @Output() createdShopping = new EventEmitter();
 
-  private _getShopping(){
-    this.dataService.getShopping()
-    .subscribe(res => {
-      this.shopping = res;
-      console.log(res);
-    });
-  }
   create(){
     this.createdShopping.emit(this.shoppingTitle);
     this.shoppingTitle = '';

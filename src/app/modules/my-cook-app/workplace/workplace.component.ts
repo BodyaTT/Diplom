@@ -14,11 +14,13 @@ export class WorkplaceComponent{
   searchRecept: string;
 
   constructor(private dataService: DataService){}
+  
   search(searchRecept:string){ 
     return this.dataService.getRecepts(searchRecept)
     .subscribe(data => {
       this.recepts = data.hits
       this.searchRecept = searchRecept;
+      console.log(data);
     });
     
   }

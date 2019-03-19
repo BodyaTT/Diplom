@@ -19,6 +19,7 @@ export class DataService {
   private shoppingUrl: string = 'http://localhost:3000/shopping';
   shopping: Shopping[] = [];
   newShopping: Shopping;
+  shoppingLenght: number;
   
 
   constructor(private _http:HttpClient) { }
@@ -34,6 +35,7 @@ export class DataService {
   createShopping(shoppingTitle: string, shoppingLenght: number):Observable<Shopping>{
     let title = shoppingTitle;
     let completed = false;
+    this.shoppingLenght = shoppingLenght;
     let id = shoppingLenght + 1;
     this.newShopping = {id ,title, completed};
     return this._http.post<Shopping>(this.shoppingUrl, this.newShopping, httpOptions) as Observable<Shopping>;
@@ -50,4 +52,11 @@ export class DataService {
    return this._http.put<void>(url, shopping, httpOptions)
   }
 
+  addToShopping(shoppingTitle: string):Observable<Shopping>{
+    let title = shoppingTitle;
+    let completed = false;
+    let id = this.shoppingLenght + 1;
+    this.newShopping = {id ,title, completed};
+    return this._http.post<Shopping>(this.shoppingUrl, this.newShopping, httpOptions) as Observable<Shopping>;
+  }
 }

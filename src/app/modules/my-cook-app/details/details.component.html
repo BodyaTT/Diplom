@@ -11,10 +11,12 @@
             <div class="ingradient__information">
               <p><b>Ingradients:</b></p>
               <div class="ingradients">
-                <ul *ngFor = "let ingradient of recepts.recipe.ingredientLines">
-                  <li>{{ingradient}}</li>
+                <ul *ngFor = "let ingradient of recepts.recipe.ingredientLines; let i = index">
+                    <mat-checkbox *ngIf="showAdd" (click)="addToShopping(i)" color="primary"></mat-checkbox>           
+                  <span>{{ingradient}}</span>
                 </ul>
               </div>
           </div>
         </div>
+        <button (click)="add()">Add to shopping</button>
   </div>
