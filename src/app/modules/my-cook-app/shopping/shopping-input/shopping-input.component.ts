@@ -24,5 +24,6 @@ export class ShoppingInputComponent {
   }
   create(){
     this.createdShopping.emit(this.shoppingTitle);
+    this.shoppingTitle = '';
   }
 }

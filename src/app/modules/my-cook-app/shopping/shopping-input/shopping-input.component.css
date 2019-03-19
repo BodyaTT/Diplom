@@ -7,3 +7,6 @@
     width: 500px;
     font-size: 18px;
  }
+ .shopping-content .ingradients__input mat-form-field input{
+    padding-left: 10px;
+}
