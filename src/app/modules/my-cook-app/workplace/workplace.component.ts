@@ -10,7 +10,7 @@ import { DataService } from '../../../data.service';
 
 
 export class WorkplaceComponent{
-  recepts: any;
+  recepts: any[];
   searchRecept: string;
 
   constructor(private dataService: DataService){}
@@ -18,7 +18,7 @@ export class WorkplaceComponent{
   search(searchRecept:string){ 
     return this.dataService.getRecepts(searchRecept)
     .subscribe(data => {
-      this.recepts = data.hits
+      this.recepts = data.hits;
       this.searchRecept = searchRecept;
       console.log(data);
     });

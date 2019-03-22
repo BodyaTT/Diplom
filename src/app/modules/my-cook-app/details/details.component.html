@@ -1,22 +1,22 @@
 <!-- <p routerLink="/"> -->
   <div class="result" *ngIf = "recepts">
       <div class="recipe__name">
-          <h1><b>{{recepts.recipe.label}}</b></h1>
+          <h1><b>{{recepts.label}}</b></h1>
       </div>
         <div class="recipe__image">
-            <img src="{{recepts.recipe.image}}" alt="recipe image">
+            <img src="{{recepts.receptImage}}" alt="recipe image">
         </div>
         <div class="recipe__name">
-            <p>Calories - {{recepts.recipe.calories | number:'1.0-0'}}</p>
+            <p>Calories - {{recepts.calories | number:'1.0-0'}}</p>
             <div class="ingradient__information">
               <p><b>Ingradients:</b></p>
               <div class="ingradients">
-                <ul *ngFor = "let ingradient of recepts.recipe.ingredientLines; let i = index">
+                <ul *ngFor = "let ingradient of recepts.ingradientLines; let i = index">
                     <mat-checkbox *ngIf="showAdd" (click)="addToShopping(i)" color="primary"></mat-checkbox>           
                   <span>{{ingradient}}</span>
                 </ul>
               </div>
           </div>
         </div>
-        <button (click)="add()">Add to shopping</button>
+        <button class="add_button" mat-raised-button color="primary" (click)="add()">Add to shopping</button>
   </div>

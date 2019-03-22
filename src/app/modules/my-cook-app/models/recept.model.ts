@@ -5,3 +5,37 @@ export class Shopping {
         this.completed = completed;
     }
 }
+
+export class Recept {
+    label: string;
+    diet: string;
+    ingredients: number;
+    receptImage: string;
+    calories: number;
+    ingradientLines: string[];
+    constructor(recepts: any){
+        this.label = recepts.recipe.label;
+        this.diet = recepts.recipe.dietLabels[0];
+        this.ingredients = recepts.recipe.ingredientLines.length;
+        this.receptImage = recepts.recipe.image;
+        this.ingradientLines = recepts.recipe.ingredientLines;
+        this.calories = recepts.recipe.calories;
+    }
+}
+
+// export class Recepts{
+//     label: string;
+//     diet: string;
+//     ingredients: number;
+//     receptImage: string;
+//     calories: number;
+//     ingradientLines: string[];
+//     constructor(recepts: any){
+//         this.label = recepts.recipe.label;
+//         this.diet = recepts.recipe.dietLabels[0];
+//         this.ingredients = recepts.recipe.ingredientLines.length;
+//         this.receptImage = recepts.recipe.image;
+//         this.ingradientLines = recepts.recipe.ingredientLines;
+//         this.calories = recepts.recipe.calories;
+//     }
+// }

@@ -12,6 +12,7 @@ import { DetailsComponent } from './details/details.component';
 import {SharedModule } from './shared/shared.module';
 import { ShoppingComponent } from './shopping/shopping.component';
 import { ShoppingInputComponent } from './shopping/shopping-input/shopping-input.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 
 const ROUTES: Route[] = [
@@ -25,7 +26,13 @@ const ROUTES: Route[] = [
       },
       {
         path: 'shopping',
-        component: ShoppingComponent
+        component: ShoppingComponent,
+        children: [
+          {
+            path: 'favorites',
+            redirectTo: '/favorites'
+          }
+        ]
       },
       {
         path: 'details/:i',
@@ -38,9 +45,23 @@ const ROUTES: Route[] = [
           {
             path: 'shopping',
             redirectTo: '/shopping'
+          },
+          {
+            path: 'favorites',
+            redirectTo: '/favorites'
           }
         ]
-      }
+      },
+      {
+        path: 'favorites',
+        component: FavoritesComponent,
+        children: [
+          {
+            path: 'shopping',
+            redirectTo: '/shopping'
+          }
+        ]
+      },
   ],
 }
 ];
@@ -61,6 +82,7 @@ const ROUTES: Route[] = [
     DetailsComponent,
     ShoppingComponent,
     ShoppingInputComponent,
+    FavoritesComponent,
   ],
   providers: [DataService],
   exports: [OperationsInputComponent]
