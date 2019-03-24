@@ -7,6 +7,7 @@ export class Shopping {
 }
 
 export class Recept {
+    id?: number;
     label: string;
     diet: string;
     ingredients: number;

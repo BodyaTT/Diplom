@@ -22,7 +22,6 @@ export class ShoppingComponent implements OnInit{
     this.dataService.getShopping()
     .subscribe(res => {
       this.shopping = res;
-      console.log(res);
     });
   }
  

@@ -1,0 +1,25 @@
+.result{
+    position: relative;
+    display: flex;
+    border: 1px solid #414141;
+    width: 50%;
+    cursor: pointer;
+    margin: 10px auto 10px auto;
+}
+.recipe__inforamtion{
+    margin-left: 15px;
+
+}
+.result .actions {
+    margin-left: auto;
+    opacity: 0;
+    transition: all .2s;
+}
+.result:hover .actions {
+    opacity: 1;
+}
+.delete{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}

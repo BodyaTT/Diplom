@@ -20,7 +20,6 @@ export class WorkplaceComponent{
     .subscribe(data => {
       this.recepts = data.hits;
       this.searchRecept = searchRecept;
-      console.log(data);
     });
     
   }

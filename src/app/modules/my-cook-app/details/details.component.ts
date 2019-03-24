@@ -39,4 +39,8 @@ export class DetailsComponent implements OnInit{
   addToShopping(index: number){ 
     this._cookService.addToShopping(this.recepts.ingradientLines[index]).subscribe();
   }
+
+  addToFavorites(){
+    this._cookService.addToFavorites(this.recepts).subscribe();
+  }
 }
