@@ -50,13 +50,23 @@ export class DataService {
     let calories = recept.calories;
     let ingradientLines = recept.ingradientLines;
 
-    this.newFavorite = { 
-      label,
-      diet,
-      ingredients,
-      receptImage,
-      calories,
-      ingradientLines}
+    if(!diet){
+      this.newFavorite = { 
+        label,
+        ingredients,
+        receptImage,
+        calories,
+        ingradientLines}
+    } else{    
+      this.newFavorite = { 
+        label,
+        diet,
+        ingredients,
+        receptImage,
+        calories,
+        ingradientLines}
+      }
+
       this.firestore.collection('favorites').add(this.newFavorite);
   }
 

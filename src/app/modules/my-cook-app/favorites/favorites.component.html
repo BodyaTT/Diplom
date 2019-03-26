@@ -1,19 +1,21 @@
 <div *ngIf = "favorites">
   <div *ngFor = "let favorite of favorites; let i = index">
-    <div class="result">
-      <div class="recipe__image">
-          <img src="{{favorite.receptImage}}" alt="recipe image">
-      </div>
-      <div class="recipe__inforamtion">
-          <h2>{{favorite.label}}</h2>
-          <h3>Diet: {{favorite.diet}}</h3>
-          <h3>Ingredients: {{favorite.ingredients}}</h3>
-          <div class="actions">
+    <div class="card-container">
+      <div class="card u-clearfix">
+        <div class="card-body">
+          <span class="card-author subtle">{{favorite.diet}}</span>
+          <h2 class="card-title">{{favorite.label}}</h2>
+          <span class="card-description subtle">Ingradients: {{favorite.ingredients}}</span>
+          <div class="card-read" [routerLink]="['details/', i, searchRecept]">Read</div>
+        </div>
+        <img src="{{favorite.receptImage}}" alt="recipe image" class="card-media" />
+        <div class="actions">
             <button class="delete" (click)="delete(favorite.id)">
                 <mat-icon color="primary" class="material-icons">clear</mat-icon>
             </button>
-          </div>
+        </div>
       </div>
+      <div class="card-shadow"></div>
     </div>
   </div>
 </div>

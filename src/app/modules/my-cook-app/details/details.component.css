@@ -1,5 +1,4 @@
 .result{
-    border: 1px solid #414141;
     margin: 15px;
 }
 .recipe__image{
@@ -9,8 +8,12 @@
     margin-left: 15px;
 }
 .recipe__name h1{
+    font-family: 'Cormorant Garamond', serif;
     text-align: center;
     font-size: 40px;
+}
+.recipe__name #calories{
+    margin-left: 50px;
 }
 .ingradient__information{
     margin-left: 50px;
@@ -24,6 +27,10 @@
 .ingradients ul span{
     margin-left: 8px;
 }
-.add_button{
-    margin-left: 46%;
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+.add_button:nth-child(2){
+    margin-left: 10px;
 }

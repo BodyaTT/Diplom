@@ -7,17 +7,22 @@
             <img src="{{recepts.receptImage}}" alt="recipe image">
         </div>
         <div class="recipe__name">
-            <p>Calories - {{recepts.calories | number:'1.0-0'}}</p>
+            <p id="calories">Calories - {{recepts.calories | number:'1.0-0'}}</p>
             <div class="ingradient__information">
               <p><b>Ingradients:</b></p>
               <div class="ingradients">
                 <ul *ngFor = "let ingradient of recepts.ingradientLines; let i = index">
+                  <li [ngStyle]="{'list-style-type': showAdd ? 'none' : 'circle'}">
                     <mat-checkbox *ngIf="showAdd" (click)="addToShopping(i)" color="primary"></mat-checkbox>           
                   <span>{{ingradient}}</span>
+                  </li>
                 </ul>
               </div>
           </div>
         </div>
-        <button class="add_button" mat-raised-button color="primary" (click)="add()">Add to shopping</button>
-        <button class="add_button" mat-raised-button color="primary" (click)="addToFavorites()">Add to favorites</button>
+        <div class="buttons">
+            <button class="add_button" mat-raised-button color="primary" (click)="add()">Add to shopping</button>
+            <button class="add_button" mat-raised-button color="primary" (click)="addToFavorites()">Add to favorites</button>
+        </div>
+
   </div>

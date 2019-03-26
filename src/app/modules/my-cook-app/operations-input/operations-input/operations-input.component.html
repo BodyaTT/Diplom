@@ -2,5 +2,5 @@
     <mat-form-field [floatLabel]="floatLabel">
             <input matInput placeholder="Search recept" [(ngModel)] = "searchRecept" name="something" autocomplete="off">
     </mat-form-field>
-    <button (click)="onSearched()" [ngClass]="{'button__up' :this.isRecepts === true}"></button>
+    <button (click)="onSearched()" (keyup.enter)="onSearched()" [ngClass]="{'button__up' :this.isRecepts === true}"></button>
 </form>
