@@ -5,9 +5,9 @@ import { AppComponent } from './app.component';
 import {MyCookAppModule } from './modules/my-cook-app/my-cook-app.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './../in-memory-data-service.service';
-
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
 
 const ROUTES: Route[] = [
   {
@@ -26,7 +26,8 @@ const ROUTES: Route[] = [
     RouterModule.forRoot(ROUTES),
     BrowserAnimationsModule,
     HttpClientModule,
-    // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService) 
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

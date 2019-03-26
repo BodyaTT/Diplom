@@ -11,7 +11,6 @@ import { DataService } from '../../../data.service';
 
 export class ShoppingComponent implements OnInit{
   shopping: Shopping[] = [];
-  shoppingLenght: number = this.shopping.length;
 
   constructor(private dataService: DataService) {}
 
@@ -21,29 +20,24 @@ export class ShoppingComponent implements OnInit{
   private _getShopping(){
     this.dataService.getShopping()
     .subscribe(res => {
-      this.shopping = res;
+      this.shopping = res.map(item => {
+        return {
+          id: item.payload.doc.id,
+          ...item.payload.doc.data()
+        } as Shopping
+      });
     });
   }
  
   toogle(shopping: Shopping){
-    this.dataService.toggleShopping(shopping).subscribe();
+    this.dataService.toggleShopping(shopping);
   }
 
-  delete(shopping: Shopping){
-    this.dataService.deleteShopping(shopping).subscribe();
-    let index = this.shopping.indexOf(shopping);
-    if(index > -1){
-      this.shopping.splice(index, 1);
-    }
+  delete(id: string){
+    this.dataService.deleteShopping(id);
   }
 
-    create(shoppingTitle: string, shoppingLenght: number){
-      this.dataService.createShopping(shoppingTitle, shoppingLenght)
-        .subscribe(
-          res => {
-            this.shopping = [
-              ...this.shopping,
-              res
-            ]});
+  create(shoppingTitle: string){
+    this.dataService.createShopping(shoppingTitle)
   }
 }

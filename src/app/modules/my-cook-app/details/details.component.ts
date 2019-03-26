@@ -37,10 +37,10 @@ export class DetailsComponent implements OnInit{
   }
 
   addToShopping(index: number){ 
-    this._cookService.addToShopping(this.recepts.ingradientLines[index]).subscribe();
+    this._cookService.createShopping(this.recepts.ingradientLines[index]);
   }
 
   addToFavorites(){
-    this._cookService.addToFavorites(this.recepts).subscribe();
+    this._cookService.addToFavorites(this.recepts);
   }
 }

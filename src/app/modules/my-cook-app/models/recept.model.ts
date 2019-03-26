@@ -1,5 +1,5 @@
 export class Shopping {
-    constructor(public title: string, public completed: boolean = false, public id: number){
+    constructor(public title: string, public completed: boolean = false, public id?: string){
         this.id = id;
         this.title = title;
         this.completed = completed;
@@ -7,7 +7,7 @@ export class Shopping {
 }
 
 export class Recept {
-    id?: number;
+    id?: string;
     label: string;
     diet: string;
     ingredients: number;

@@ -20,14 +20,17 @@ export class FavoritesComponent implements OnInit {
 
   private _getFavorites(){
     this._cookService.getFavorites()
-    .subscribe(res => this.favorites = res)
+    .subscribe(res => {
+      this.favorites = res.map(item => {
+        return {
+          id: item.payload.doc.id,
+          ...item.payload.doc.data()
+        } as Recept
+      });
+    });
   }
   
-  delete(favorite: Recept){
-    this._cookService.deleteFavorite(favorite).subscribe();
-    let index = this.favorites.indexOf(favorite);
-    if(index > -1){
-      this.favorites.splice(index, 1);
-    }
+  delete(id: string){
+    this._cookService.deleteFavorite(id);
   }
 }

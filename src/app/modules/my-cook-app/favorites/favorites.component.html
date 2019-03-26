@@ -9,7 +9,7 @@
           <h3>Diet: {{favorite.diet}}</h3>
           <h3>Ingredients: {{favorite.ingredients}}</h3>
           <div class="actions">
-            <button class="delete" (click)="delete(favorite)">
+            <button class="delete" (click)="delete(favorite.id)">
                 <mat-icon color="primary" class="material-icons">clear</mat-icon>
             </button>
           </div>

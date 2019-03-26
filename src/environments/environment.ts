@@ -4,7 +4,14 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000/'
+  firebaseConfig: {
+    apiKey: "AIzaSyC2mvn4a8K3xL9s5TNBFjd6AI3tIvqERn4",
+    authDomain: "mycook-5aea5.firebaseapp.com",
+    databaseURL: "https://mycook-5aea5.firebaseio.com",
+    projectId: "mycook-5aea5",
+    storageBucket: "mycook-5aea5.appspot.com",
+    messagingSenderId: "82319868186"
+  }
 };
 
 
