@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../../data.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 
 @Component({
@@ -7,10 +9,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wrap.component.css']
 })
 export class WrapComponent implements OnInit {
-
-  constructor() { }
+  user: firebase.User;
+  constructor(
+    private service: DataService,
+    private afAuth:AngularFireAuth
+    ) { }
 
   ngOnInit() {
+    this.afAuth.authState
+    .subscribe(user => {
+      this.user = user;
+    })
   }
 
+  loginGoogle(){
+    this.service.login();
+  }
+
+  logout(){
+    this.service.logout();
+  }
 }

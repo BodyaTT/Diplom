@@ -1,5 +1,5 @@
 <app-shopping-input (createdShopping)="create($event)"></app-shopping-input>
-<div class="shopping-content">
+<div *ngIf="shopping" class="shopping-content">
   <div class="shopping__list" *ngIf="shopping.length">
     <div class="shopping__item" *ngFor="let item of shopping"  [ngClass]="{'completed' : item.completed }">
       <button class="checkbox icon" (click)="toogle(item)">
@@ -16,4 +16,5 @@
     </div>
   </div>
 </div>
+
 

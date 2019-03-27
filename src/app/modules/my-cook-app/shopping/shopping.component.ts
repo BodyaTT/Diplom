@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Shopping } from '../models/recept.model';
 import { DataService } from '../../../data.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 
 @Component({
@@ -12,7 +13,9 @@ import { DataService } from '../../../data.service';
 export class ShoppingComponent implements OnInit{
   shopping: Shopping[] = [];
 
-  constructor(private dataService: DataService) {}
+  constructor(
+    private dataService: DataService
+    ) {}
 
   ngOnInit(){
     this._getShopping();
@@ -26,7 +29,7 @@ export class ShoppingComponent implements OnInit{
           ...item.payload.doc.data()
         } as Shopping
       });
-    });
+    })
   }
  
   toogle(shopping: Shopping){

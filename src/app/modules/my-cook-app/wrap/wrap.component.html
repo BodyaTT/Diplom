@@ -1,8 +1,10 @@
 <mat-toolbar color="primary">
   <div class="menu__link">
     <a routerLink="/"><mat-icon>search</mat-icon>Search</a>
-    <a routerLink="shopping" id="shopping"><mat-icon>shopping_cart</mat-icon>Shopping</a>
-    <a routerLink="favorites" id="favorites"><mat-icon>favorite</mat-icon>Favorites</a>
+    <a routerLink="shopping" id="shopping" *ngIf="user"><mat-icon>shopping_cart</mat-icon>Shopping</a>
+    <a routerLink="favorites" id="favorites" *ngIf="user"><mat-icon>favorite</mat-icon>Favorites</a>
+    <a *ngIf="!user" id="user-log" (click)="loginGoogle()"><mat-icon>account_circle</mat-icon>Login</a>
+    <a routerLink="/" *ngIf="user" id="user-log" (click)="logout()"><mat-icon>account_circle</mat-icon>Logout</a>
   </div>
 </mat-toolbar>
 <router-outlet></router-outlet>

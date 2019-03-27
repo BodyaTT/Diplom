@@ -23,3 +23,13 @@ export class Recept {
         this.calories = recepts.recipe.calories;
     }
 }
+
+export interface User{
+    uid: string;
+    email: string;
+    photoUrl?: string;
+    displayName?: string;
+    shopping: Shopping;
+    favorites: Recept; 
+
+}

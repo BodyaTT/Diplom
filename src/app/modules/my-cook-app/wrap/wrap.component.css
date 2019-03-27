@@ -1,5 +1,6 @@
 .menu__link{
     margin-left: 40px;
+    width: 100%;
 }
 .menu__link a{
     position: relative;
@@ -11,4 +12,14 @@ mat-icon{
     font-size: 25px;
     left: -25px;
     top: -1px;
+}
+#user-log{
+    cursor: pointer;
+    float: right;
+}
+#user-log mat-icon{
+    position: absolute;
+    font-size: 25px;
+    left: -25px;
+    top: 3px;
 }
