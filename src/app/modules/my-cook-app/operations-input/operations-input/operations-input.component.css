@@ -10,6 +10,7 @@
 }
 .search mat-form-field input{
     padding-left: 10px;
+    font-weight: 450;
 }
 .search__postition button{
     margin-left: 20px;

@@ -6,3 +6,8 @@ a { text-decoration: none; }
 li { list-style-type: none;  }
 ul { padding-left: 0; }
 button { border:none; background-color: transparent; outline: none; cursor: pointer; }
+body{
+    background: url('./images/Background.jpg');
+    background-attachment: fixed;
+    background-size: 100%;
+}

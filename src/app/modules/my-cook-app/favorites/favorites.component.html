@@ -1,12 +1,12 @@
 <div *ngIf = "favorites">
-  <div *ngFor = "let favorite of favorites; let i = index">
+  <div *ngFor = "let favorite of favorites">
     <div class="card-container">
       <div class="card u-clearfix">
         <div class="card-body">
           <span class="card-author subtle">{{favorite.diet}}</span>
           <h2 class="card-title">{{favorite.label}}</h2>
           <span class="card-description subtle">Ingradients: {{favorite.ingredients}}</span>
-          <div class="card-read" [routerLink]="['details/', i, searchRecept]">Read</div>
+          <div class="card-read" [routerLink]="['details/', favorite.recId, favorite.recWord]">Read</div>
         </div>
         <img src="{{favorite.receptImage}}" alt="recipe image" class="card-media" />
         <div class="actions">

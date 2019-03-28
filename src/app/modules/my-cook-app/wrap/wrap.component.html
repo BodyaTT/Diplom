@@ -4,7 +4,8 @@
     <a routerLink="shopping" id="shopping" *ngIf="user"><mat-icon>shopping_cart</mat-icon>Shopping</a>
     <a routerLink="favorites" id="favorites" *ngIf="user"><mat-icon>favorite</mat-icon>Favorites</a>
     <a *ngIf="!user" id="user-log" (click)="loginGoogle()"><mat-icon>account_circle</mat-icon>Login</a>
-    <a routerLink="/" *ngIf="user" id="user-log" (click)="logout()"><mat-icon>account_circle</mat-icon>Logout</a>
+    <a routerLink="/" *ngIf="user" id="user-log" (click)="logout()"><span class="loggined" [ngStyle]="{'background-image': 'url(' + user.photoURL + ')'}">
+    </span>Logout</a>
   </div>
 </mat-toolbar>
 <router-outlet></router-outlet>

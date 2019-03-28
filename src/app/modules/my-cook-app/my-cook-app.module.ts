@@ -59,7 +59,11 @@ const ROUTES: Route[] = [
           {
             path: 'shopping',
             redirectTo: '/shopping'
-          }
+          },
+          {
+            path: 'details/:favorite.recId/:favorite.recWord',
+            redirectTo: '/details/:favorite.recId/:favorite.recWord', 
+        }
         ]
       },
   ],

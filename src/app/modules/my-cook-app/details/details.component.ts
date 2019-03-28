@@ -48,6 +48,6 @@ export class DetailsComponent implements OnInit{
   }
 
   addToFavorites(){
-    this._cookService.addToFavorites(this.recepts);
+    this._cookService.addToFavorites(this.recepts, this.recipeId, this.searchRecept);
   }
 }

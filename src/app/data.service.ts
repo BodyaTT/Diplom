@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Shopping, Recept, User } from './modules/my-cook-app/models/recept.model';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs';;
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase';
+import { auth } from 'firebase/app';
 
 
 
@@ -55,13 +55,15 @@ export class DataService {
     this.firestore.doc('users/' + this.userId + '/shopping/' + shopping.id).update(shopping);
   }
 
-  addToFavorites(recept: Recept){
+  addToFavorites(recept: Recept, recipeId: string, searchWord: string){
     let label = recept.label;
     let diet = recept.diet;
     let ingredients = recept.ingredients;
     let receptImage = recept.receptImage;
     let calories = recept.calories;
     let ingradientLines = recept.ingradientLines;
+    let recId = recipeId;
+    let recWord = searchWord;
 
     if(!diet){
       this.newFavorite = { 
@@ -77,7 +79,9 @@ export class DataService {
         ingredients,
         receptImage,
         calories,
-        ingradientLines}
+        ingradientLines,
+        recId,
+        recWord}
       }
 
       this.firestore.collection('users/' + this.userId + '/favorites').add(this.newFavorite);

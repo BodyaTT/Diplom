@@ -14,6 +14,9 @@ export class Recept {
     receptImage: string;
     calories: number;
     ingradientLines: string[];
+    recId?: string;
+    recWord?: string;
+    
     constructor(recepts: any){
         this.label = recepts.recipe.label;
         this.diet = recepts.recipe.dietLabels[0];

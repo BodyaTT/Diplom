@@ -23,3 +23,16 @@ mat-icon{
     left: -25px;
     top: 3px;
 }
+
+#user-log .loggined{
+    background-size: 32px 32px;
+    border-radius: 50%;
+    display: block;
+    margin: -1px;
+    overflow: hidden;
+    height: 32px;
+    width: 32px;
+    z-index: 0;
+    position: absolute;
+    left: -35px;
+}
