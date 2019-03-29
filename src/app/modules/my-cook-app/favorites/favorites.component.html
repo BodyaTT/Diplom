@@ -6,7 +6,7 @@
           <span class="card-author subtle">{{favorite.diet}}</span>
           <h2 class="card-title">{{favorite.label}}</h2>
           <span class="card-description subtle">Ingradients: {{favorite.ingredients}}</span>
-          <div class="card-read" [routerLink]="['details/', favorite.recId, favorite.recWord]">Read</div>
+          <div class="card-read" [routerLink]="['details/', favorite.recId, favorite.recWord, favorite.isFavorite]">Read</div>
         </div>
         <img src="{{favorite.receptImage}}" alt="recipe image" class="card-media" />
         <div class="actions">
