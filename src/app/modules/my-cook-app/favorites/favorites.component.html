@@ -1,4 +1,4 @@
-<div *ngIf = "favorites">
+<div *ngIf = "isFavorites">
   <div *ngFor = "let favorite of favorites">
     <div class="card-container">
       <div class="card u-clearfix">
@@ -19,3 +19,4 @@
     </div>
   </div>
 </div>
+<div class="emptyList" *ngIf = "!isFavorites">Your favorite list is empty. Add something.</div>

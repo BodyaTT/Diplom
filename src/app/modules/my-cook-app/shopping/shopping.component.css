@@ -39,3 +39,8 @@
 .material-icons{
     color: #673AB7;
 }
+.emptyList{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: #757575;
+    text-align: center;
+}

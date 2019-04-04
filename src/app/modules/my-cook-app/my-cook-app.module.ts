@@ -13,6 +13,7 @@ import {SharedModule } from './shared/shared.module';
 import { ShoppingComponent } from './shopping/shopping.component';
 import { ShoppingInputComponent } from './shopping/shopping-input/shopping-input.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { FilterComponent } from './filter/filter.component';
 
 
 const ROUTES: Route[] = [
@@ -87,6 +88,7 @@ const ROUTES: Route[] = [
     ShoppingComponent,
     ShoppingInputComponent,
     FavoritesComponent,
+    FilterComponent,
   ],
   providers: [DataService],
   exports: [OperationsInputComponent]

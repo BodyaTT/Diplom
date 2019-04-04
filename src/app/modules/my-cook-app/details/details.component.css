@@ -34,3 +34,10 @@
 .add_button:nth-child(2){
     margin-left: 10px;
 }
+.source a{
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #673AB7;
+    color: #F3EFFA;
+    font-weight: 450;
+}

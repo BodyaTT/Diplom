@@ -1,11 +1,12 @@
 <mat-toolbar color="primary">
   <div class="menu__link">
-    <a routerLink="/"><mat-icon>search</mat-icon>Search</a>
-    <a routerLink="shopping" id="shopping" [ngClass]="{'disabled' : !user}"><mat-icon>shopping_cart</mat-icon>Shopping</a>
-    <a routerLink="favorites" id="favorites" [ngClass]="{'disabled' : !user}"><mat-icon>favorite</mat-icon>Favorites</a>
-    <a *ngIf="!user" id="user-log" (click)="loginGoogle()"><mat-icon>account_circle</mat-icon>Login</a>
-    <a routerLink="/" *ngIf="user" id="user-log" (click)="logout()"><span class="loggined" [ngStyle]="{'background-image': 'url(' + user.photoURL + ')'}">
-    </span>Logout</a>
+      <a routerLink="/"><mat-icon>search</mat-icon>Search</a>
+      <a routerLink="shopping"  id="shopping" [ngClass]="{'disabled' : !user}"><mat-icon>shopping_cart</mat-icon>Shopping</a>
+      <a routerLink="favorites" id="favorites" [ngClass]="{'disabled' : !user}"><mat-icon>favorite</mat-icon>Favorites</a>
+      <a *ngIf="!user" id="user-log" (click)="loginGoogle()"><mat-icon>account_circle</mat-icon>Login</a>
+      <a routerLink="/" *ngIf="user" id="user-log" (click)="logout()">
+        <span class="loggined" [ngStyle]="{'background-image': 'url(' + user.photoURL + ')'}">
+        </span>Logout</a>
   </div>
 </mat-toolbar>
 <router-outlet></router-outlet>

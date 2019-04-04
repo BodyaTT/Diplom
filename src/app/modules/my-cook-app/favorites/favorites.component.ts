@@ -9,6 +9,7 @@ import { Recept } from '../models/recept.model';
 })
 export class FavoritesComponent implements OnInit {
   favorites: Recept[];
+  isFavorites:boolean = true;
 
   constructor(
     private _cookService: DataService
@@ -27,6 +28,11 @@ export class FavoritesComponent implements OnInit {
           ...item.payload.doc.data()
         } as Recept
       });
+      if(res.length === 0){
+        this.isFavorites = false;
+      } else{
+        this.isFavorites = true;
+      }
     });
   }
   

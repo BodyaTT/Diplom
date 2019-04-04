@@ -16,6 +16,7 @@ export class Recept {
     ingradientLines: string[];
     recId?: string;
     recWord?: string;
+    sourceUrl?: string;
     
     constructor(recepts: any){
         this.label = recepts.recipe.label;
@@ -24,6 +25,7 @@ export class Recept {
         this.receptImage = recepts.recipe.image;
         this.ingradientLines = recepts.recipe.ingredientLines;
         this.calories = recepts.recipe.calories;
+        this.sourceUrl = recepts.recipe.url;
     }
 }
 
@@ -34,5 +36,18 @@ export interface User{
     displayName?: string;
     shopping: Shopping;
     favorites: Recept; 
+}
 
+export interface Diet{
+    value: string;
+    viewValue: string;
+}
+
+export class Filter{
+    constructor(public maxIngradients: number, public diet: string, public minCalories: number, public maxCalories: number){
+        this.maxIngradients = maxIngradients;
+        this.diet = diet;
+        this.minCalories = minCalories;
+        this.maxCalories = maxCalories;
+    }
 }

@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { MatButtonModule, MatInputModule, MatIconModule, MatSelectModule, MatButtonToggleModule, MatCardModule, MatToolbarModule, MatCheckboxModule } from '@angular/material';
+import { MatButtonModule, MatInputModule, MatIconModule, MatSelectModule, 
+        MatButtonToggleModule, MatCardModule, MatToolbarModule, 
+        MatCheckboxModule, MatSliderModule } from '@angular/material';
 
 const MODULES = [HttpClientModule, FormsModule, ReactiveFormsModule];
-const MATERIAL_MODULES = [MatButtonModule, MatInputModule, MatIconModule, MatSelectModule, MatButtonToggleModule, MatCardModule, MatToolbarModule, MatCheckboxModule];
+const MATERIAL_MODULES = [MatButtonModule, MatInputModule, MatIconModule, MatSelectModule, MatButtonToggleModule, MatCardModule, MatToolbarModule, MatCheckboxModule, MatSliderModule];
 
 @NgModule({
   imports: [

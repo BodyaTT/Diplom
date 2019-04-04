@@ -110,3 +110,9 @@
     width: 80%;
     z-index: -1;
   }
+  .emptyList{
+    margin: 20px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: #757575;
+    text-align: center;
+}

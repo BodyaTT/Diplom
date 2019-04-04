@@ -1,4 +1,5 @@
-<app-operations-input (searchedRecipe)="search($event)"></app-operations-input>
+<app-operations-input (searchedRecipe)="search($event)" (toogleFilter)="toogleFilter($event)"></app-operations-input>
+<app-filter *ngIf="isFilter" (setFilter)="searchWithFilter($event)"></app-filter>
 <div *ngIf = "recepts">
   <div *ngFor = "let recept of recepts; let i = index">
     <div class="card-container">
@@ -15,5 +16,6 @@
     </div>
   </div>
 </div>
+
 
   

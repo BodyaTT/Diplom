@@ -15,7 +15,7 @@
 .search__postition button{
     margin-left: 20px;
 }
-button{
+#searchButton{
     position: relative;
     left: 15px;
     top: 10px;
@@ -70,3 +70,6 @@ button{
      height: 32px;
      background-image: url(../../../../../images/recipe-book2.png);
  }
+#filterButton{
+    margin-left: 15px;
+}

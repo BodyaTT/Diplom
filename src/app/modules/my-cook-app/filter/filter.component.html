@@ -1,0 +1,29 @@
+<div class="content">
+    <mat-card>
+      <mat-card-content>
+        <mat-form-field >
+            <input matInput type="number" placeholder="Max ingradients" [(ngModel)]="maxIngradients">
+        </mat-form-field>
+
+        <mat-form-field >
+            <input matInput type="number" placeholder="Min calories" [(ngModel)]="minCalories">
+        </mat-form-field>
+
+        <mat-form-field >
+            <input matInput type="number" placeholder="Max calories" [(ngModel)]="maxCalories">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Choose diet</mat-label>
+            <mat-select [(ngModel)]="diet">
+              <mat-option *ngFor="let diet of diets" [value]="diet.value">
+                {{diet.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+     </mat-card-content>
+     <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="acceptFilter()">Accept</button>
+     </mat-card-actions>
+</mat-card>
+</div>

@@ -17,8 +17,14 @@
                   <span>{{ingradient}}</span>
                   </li>
                 </ul>
+                <div class="source">
+                  <a href="{{recepts.sourceUrl}}" target="_blank">
+                    How to cook
+                  </a>
+                </div>
               </div>
           </div>
+
         </div>
         <div *ngIf="user" class="buttons">
             <button class="add_button" mat-raised-button color="primary" (click)="add()">Add to shopping</button>

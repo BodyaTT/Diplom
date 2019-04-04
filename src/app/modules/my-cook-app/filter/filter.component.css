@@ -1,0 +1,8 @@
+.content{
+    text-align: center;
+    width: 50%;
+    margin: 25px auto 0 auto;
+}
+.content mat-form-field {
+    margin: 15px;
+}

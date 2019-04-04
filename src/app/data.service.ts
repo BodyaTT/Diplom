@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Shopping, Recept, User } from './modules/my-cook-app/models/recept.model';
+import { Shopping, Recept, User, Filter } from './modules/my-cook-app/models/recept.model';
 import { Observable } from 'rxjs';;
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -19,6 +19,9 @@ export class DataService {
   newFavorite: Recept;
   shoppingLenght: number;
   userId: string;
+  filter: Filter;
+
+  maxIngr: number = 5;
   
 
   constructor(
@@ -30,8 +33,13 @@ export class DataService {
       })
      }
 
-  getRecepts(searchRecept:string):Observable<any>{
-    return this._http.get(this.apiUrlRecept + searchRecept + "&app_id=5a79b16d&app_key=106522329383adb2c93f889d76e7a990")
+  getRecepts(searchRecept:string, filter?: Filter):Observable<any>{
+    return this._http.get(this.apiUrlRecept + searchRecept + "&app_id=5a79b16d&app_key=106522329383adb2c93f889d76e7a990");
+  }
+
+  setFilters(filter: Filter){
+    this.filter = filter;
+    console.log(this.filter);
   }
 
   getShopping(){

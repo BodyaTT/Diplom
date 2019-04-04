@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../../../data.service';
+import { Filter } from '../models/recept.model';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { DataService } from '../../../data.service';
 export class WorkplaceComponent{
   recepts: any[];
   searchRecept: string;
+  isFilter:boolean;
 
   constructor(private dataService: DataService){}
   
@@ -21,6 +23,13 @@ export class WorkplaceComponent{
       this.recepts = data.hits;
       this.searchRecept = searchRecept;
     });
-    
+  }
+
+  searchWithFilter(filter: Filter){
+    this.dataService.setFilters(filter);
+  }
+
+  toogleFilter(filter: boolean){
+    this.isFilter = filter;
   }
 }

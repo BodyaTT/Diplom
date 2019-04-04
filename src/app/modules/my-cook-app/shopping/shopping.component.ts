@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Shopping } from '../models/recept.model';
 import { DataService } from '../../../data.service';
-import { AngularFireAuth } from '@angular/fire/auth';
 
 
 @Component({
@@ -12,6 +11,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 
 export class ShoppingComponent implements OnInit{
   shopping: Shopping[] = [];
+  isShopping:boolean = true;
 
   constructor(
     private dataService: DataService
@@ -29,9 +29,14 @@ export class ShoppingComponent implements OnInit{
           ...item.payload.doc.data()
         } as Shopping
       });
-    })
+      if(res.length === 0){
+        this.isShopping = false;
+      } else{
+        this.isShopping = true;
+      }
+    });
   }
- 
+
   toogle(shopping: Shopping){
     this.dataService.toggleShopping(shopping);
   }
