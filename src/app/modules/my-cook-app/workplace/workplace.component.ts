@@ -27,6 +27,7 @@ export class WorkplaceComponent{
 
   searchWithFilter(filter: Filter){
     this.dataService.setFilters(filter);
+    this.toogleFilter(false);
   }
 
   toogleFilter(filter: boolean){

@@ -1,7 +1,7 @@
 <form  class="search" [ngClass]="{'search__up':this.isRecepts === true}">
     <mat-form-field [floatLabel]="floatLabel">
-            <input matInput placeholder="Search recept" [(ngModel)] = "searchRecept" name="something" autocomplete="off">
+            <input matInput placeholder="Search recipes" [(ngModel)] = "searchRecept" name="something" autocomplete="off">
     </mat-form-field>
     <button id="searchButton" (click)="onSearched()" (keyup.enter)="onSearched()" [ngClass]="{'button__up' :this.isRecepts === true}"></button>
-    <button id="filterButton" type="button" (click)="filter()">Filter</button>
+    <button id="filterButton" type="button" (click)="filter()" [ngClass]="{'button__up' :this.isRecepts === true}"></button>
 </form>

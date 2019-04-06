@@ -3,6 +3,7 @@ import { DataService } from '../../../data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Recept } from '../models/recept.model';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-details',
@@ -15,6 +16,9 @@ export class DetailsComponent implements OnInit{
   recepts: Recept;
   showAdd: boolean = false;
   user: firebase.User;
+
+
+  myDoughnutChart = [];
 
   constructor(
     private _cookService: DataService,
@@ -30,6 +34,26 @@ export class DetailsComponent implements OnInit{
     .subscribe(user => {
       this.user = user;
     })
+    
+    this.myDoughnutChart = new Chart('doughnut-chart', {
+      type: 'doughnut',
+      data: {
+        labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+        datasets: [
+          {
+            label: "Population (millions)",
+            backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+            data: [2478,5267,734,784,433]
+          }
+        ]
+      },
+      options: {
+        title: {
+          display: true,
+          text: 'Predicted world population (millions) in 2050'
+        }
+      }
+  });
   }
 
   private _search(searchRecept:string, recipeId: string){ 

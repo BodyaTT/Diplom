@@ -17,6 +17,7 @@ export class Recept {
     recId?: string;
     recWord?: string;
     sourceUrl?: string;
+    digest?: string[];
     
     constructor(recepts: any){
         this.label = recepts.recipe.label;
@@ -26,6 +27,7 @@ export class Recept {
         this.ingradientLines = recepts.recipe.ingredientLines;
         this.calories = recepts.recipe.calories;
         this.sourceUrl = recepts.recipe.url;
+        this.digest = recepts.recipe.digest;
     }
 }
 

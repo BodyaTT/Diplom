@@ -33,13 +33,19 @@ export class DataService {
       })
      }
 
-  getRecepts(searchRecept:string, filter?: Filter):Observable<any>{
-    return this._http.get(this.apiUrlRecept + searchRecept + "&app_id=5a79b16d&app_key=106522329383adb2c93f889d76e7a990");
+  getRecepts(searchRecept:string):Observable<any>{
+    if(this.filter){
+      return this._http.get(this.apiUrlRecept + searchRecept + "&app_id=5a79b16d&app_key=106522329383adb2c93f889d76e7a990" + 
+      "&calories=" + this.filter.minCalories + "-" + this.filter.maxCalories + "&diet=" + this.filter.diet + "&ingr=" + this.filter.maxIngradients);
+    } 
+    else {
+      return this._http.get(this.apiUrlRecept + searchRecept + "&app_id=5a79b16d&app_key=106522329383adb2c93f889d76e7a990");
+    }
   }
 
   setFilters(filter: Filter){
     this.filter = filter;
-    console.log(this.filter);
+    // console.log(this.filter);
   }
 
   getShopping(){

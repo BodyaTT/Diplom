@@ -11,8 +11,8 @@ export class FilterComponent implements OnInit {
   @Output() setFilter = new EventEmitter;
 
   maxIngradients: number = 1;
-  minCalories: number = 50;
-  maxCalories: number = 100;
+  minCalories: number = 100;
+  maxCalories: number = 1000;
   filter: Filter;
 
   diet:string;
@@ -31,8 +31,10 @@ export class FilterComponent implements OnInit {
   }
 
   acceptFilter(){
-    this.filter = new Filter(this.maxIngradients, this.diet, this.minCalories, this.maxCalories);
-    this.setFilter.emit(this.filter);
+    if(this.diet){    
+      this.filter = new Filter(this.maxIngradients, this.diet, this.minCalories, this.maxCalories);
+      this.setFilter.emit(this.filter);
+    }
   }
 
 }

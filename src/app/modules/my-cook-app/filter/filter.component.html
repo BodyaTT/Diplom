@@ -15,7 +15,7 @@
 
         <mat-form-field>
             <mat-label>Choose diet</mat-label>
-            <mat-select [(ngModel)]="diet">
+            <mat-select matNativeControl required [(ngModel)]="diet">
               <mat-option *ngFor="let diet of diets" [value]="diet.value">
                 {{diet.viewValue}}
               </mat-option>

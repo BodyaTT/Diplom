@@ -15,7 +15,7 @@
 .search__postition button{
     margin-left: 20px;
 }
-#searchButton{
+button{
     position: relative;
     left: 15px;
     top: 10px;
@@ -65,11 +65,13 @@
      color: inherit;
      background-color: transparent;
      cursor: pointer;
- 
      width: 32px;
      height: 32px;
      background-image: url(../../../../../images/recipe-book2.png);
  }
 #filterButton{
-    margin-left: 15px;
+    margin-left: 10px;
+    width: 32px;
+    height: 32px;
+    background-image: url(../../../../../images/filter.png);
 }
