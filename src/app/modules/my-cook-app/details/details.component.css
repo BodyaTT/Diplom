@@ -5,7 +5,8 @@
     text-align: center;
 }
 .recipe__information{
-    margin-left: 15px;
+    width: 50%;
+    float: left;
 }
 .recipe__name h1{
     font-family: 'Cormorant Garamond', serif;
@@ -30,6 +31,9 @@
 .buttons{
     display: flex;
     justify-content: center;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 .add_button:nth-child(2){
     margin-left: 10px;
@@ -40,4 +44,9 @@
     background-color: #673AB7;
     color: #F3EFFA;
     font-weight: 450;
+}
+.pie_information{
+    width: 50%;
+    float: right;
+    margin-bottom: 30px;
 }

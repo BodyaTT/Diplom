@@ -6,7 +6,7 @@
         <div class="recipe__image">
             <img src="{{recepts.receptImage}}" alt="recipe image">
         </div>
-        <div class="recipe__name">
+        <div class="recipe__information">
             <p id="calories">Calories - {{recepts.calories | number:'1.0-0'}}</p>
             <div class="ingradient__information">
               <p><b>Ingradients:</b></p>
@@ -24,13 +24,14 @@
                 </div>
               </div>
           </div>
-
-        </div>
-        <div *ngIf="user" class="buttons">
-            <button class="add_button" mat-raised-button color="primary" (click)="add()">Add to shopping</button>
-            <button  class="add_button" mat-raised-button color="primary" (click)="addToFavorites()">Add to favorites</button>
-        </div>
-        <div>
-           <canvas id="doughnut-chart" width="800" height="450"></canvas>
         </div>
   </div>
+  <div class="pie_information">
+    <div style="width: 80%;">
+      <canvas id="canvas"></canvas>
+    </div>
+  </div>
+  <div *ngIf="user && recepts" class="buttons">
+    <button class="add_button" mat-raised-button color="primary" (click)="add()">Add to shopping</button>
+    <button  class="add_button" mat-raised-button color="primary" (click)="addToFavorites()">Add to favorites</button>
+</div>

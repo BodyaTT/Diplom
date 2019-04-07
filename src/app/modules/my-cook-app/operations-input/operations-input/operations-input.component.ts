@@ -9,7 +9,7 @@ export class OperationsInputComponent {
   floatLabel: string;
   searchRecept: string;
   isRecepts:boolean = false;
-  isFilter:boolean = false;
+  isFilter:boolean;
 
   @Output() searchedRecipe = new EventEmitter;
   @Output() toogleFilter = new EventEmitter;
@@ -23,7 +23,7 @@ export class OperationsInputComponent {
   }
 
   filter(){
-    this.isFilter = !this.isFilter;
+    this.isFilter = true;
     this.toogleFilter.emit(this.isFilter);
   }
 }
